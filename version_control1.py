@@ -28,8 +28,20 @@ def main():
             encoded_passw = encode(passw)
             print('Your password has been encoded and stored!')
         if user_input == 2:
-            print('eep')
+            print("eep")
+            stringb = decode(encoded_passw)
+            print(stringb)
 
+def decode(encoded_passw):
+    encoded_list = []
+    stringb = ""
+    for i in range(0, len(encoded_passw)):
+        encoded_list.append(encoded_passw[i])
+    for i in range(0, len(encoded_list)):
+        encoded_list[i] = int(encoded_list[i]) - 3
+    for i in range(0, len(encoded_list)):
+        stringb += str(encoded_list[i])
+    return stringb
 
 
 if __name__ == '__main__':
